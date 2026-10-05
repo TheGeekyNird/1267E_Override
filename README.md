@@ -1,5 +1,26 @@
-# 1267E Robot Base Project
+# Official 1267E Override Repository
 
-This repository was trimmed down using Copilot to a neutral PROS starting point for a new robot.
+> **AI Usage Disclosure:**  
+> This repository was initially trimmed down from our previous season's codebase into a neutral PROS starting point with assistance from Microsoft Copilot. This assistance was limited to code cleanup, removal of outdated robot-specific systems, and project restructuring. All new robot functionality, design decisions, programming, and testing are completed by team members.
 
-Use this as a clean baseline for wiring in the next robot's motor map, sensors, and subsystem logic. The old game-specific autonomous and mechanism code has been removed or simplified so you can build a fresh implementation without carrying last year's assumptions.
+---
+
+## Credits
+
+### Programming
+- **Primary Coder:** Micah Peirce
+- **Additional Coders:** Ethan Mackin, Noah Raimo
+
+### Robot Construction
+- **Primary Robot Builder:** Ethan Mackin
+- **Additional Robot Builders:** Jack Mackin, Isaac Fischer, Noah Raimo
+
+### Engineering Notebook
+- **Primary Notebooker & Notebook Layout Designer:** Noah Raimo
+- **Additional Notebooker:** Jack Mackin
+
+### Media
+- **Photographer:** Isaac Fischer
+
+### Design & CAD
+- **3D Modeler (ProtoBot):** Micah Peirce
