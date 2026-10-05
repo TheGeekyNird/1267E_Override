@@ -1,36 +1,32 @@
 #include "main.h"
+#include <cmath>
 
-int joystick_math(int joystick_value, int deadzone){
-    if (std::abs(joystick_value) < deadzone ){
+int joystick_math(int joystick_value, int deadzone) {
+    if (std::abs(joystick_value) < deadzone) {
         return 0;
     }
-    else {
-        return get_sign(joystick_value)*(powf(std::fabs(joystick_value)/50,5)+20);
-        //return joystick_value;
-    }
+
+    const double scaled = std::pow(std::fabs(static_cast<double>(joystick_value)) / 50.0, 5.0) + 20.0;
+    return get_sign(joystick_value) * static_cast<int>(scaled);
 }
 
-int get_sign(double value){
-    if (value == 0){
+int get_sign(double value) {
+    if (value == 0.0) {
         return 1;
     }
-    else {
-        return value/fabs(value);
-    }
+    return value < 0.0 ? -1 : 1;
 }
 
-bool within(double number, double target, double range){
-    if (number<target+range and number>target-range){return true;}
-    return false;
+bool within(double number, double target, double range) {
+    return number >= target - range && number <= target + range;
 }
 
-void move_drive_motors(float Left_value, float Right_value){
-    //Move all motors with given value [-127,127]
-	FL.move(Left_value);
-    ML.move(Left_value);
-	BL.move(Left_value);
-		
-	FR.move(Right_value);
-    MR.move(Right_value);
-	BR.move(Right_value);
+void move_drive_motors(float left_value, float right_value) {
+    FL.move(left_value);
+    ML.move(left_value);
+    BL.move(left_value);
+
+    FR.move(right_value);
+    MR.move(right_value);
+    BR.move(right_value);
 }
